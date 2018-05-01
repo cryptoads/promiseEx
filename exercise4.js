@@ -1,16 +1,18 @@
-function dropToastPromisified() {
-   
-   var p = new Promise( function(resolve, reject){
+let dropButteredToastOnFloor = (success, failure) => {
    let drop = Math.random();
    if (drop < 0.5) {
       console.log("Landed butter-side up!");
-      resolve();
+      success();
    } else {
       console.log("Landed butter-side down...");
-      reject();
+      failure();
    }
-})
-    return p;
+}
+
+function dropToastPromisified() {
+   return new Promise(function(resolve, reject){
+    dropButteredToastOnFloor(resolve,reject);
+   });
 }
 
 dropToastPromisified()

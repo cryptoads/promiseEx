@@ -10,7 +10,7 @@ function addNumbers(x,y){
     return p;
 };
 
-var x = 'j';
+var x = false;
 var y = 9;
 
 addNumbers(x, y)
